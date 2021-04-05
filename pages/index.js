@@ -1,65 +1,55 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
+import {FiArrowRight, FiArrowDown, FiDownload} from 'react-icons/fi'
+import {motion} from 'framer-motion'
+import TextLoop from 'react-text-loop'
+import Link from "next/link";
+
+
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>
+          Shishir Timalsina - Personal Website
+        </title>
       </Head>
+      <div className={styles.landing}>
+        <div className={styles.landingleft}>
+          <div className={styles.wrapper}>
+          
+         
+          <motion.h1 initial={{ x : -250, opacity:0}} animate={{ x : 0, opacity:1 }} className={styles.title}>SHISHIR TIMALSINA</motion.h1>
+          <motion.h3 initial={{ x : -250, opacity:0}} animate={{ x : 0, opacity:1 }} className={styles.subtext}>
+          <TextLoop springConfig={{ stiffness: 180}}>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <div><span className={styles.subtextitalic}>Full-Stack</span> Web Developer</div>
+            <div><span className={styles.subtextitalic}>A Young</span> Tech Enthusiast</div>
+            <div><span className={styles.subtextitalic}>Part-Time</span> Blogger</div>
+            <div><span className={styles.subtextitalic}>Based in</span> Sydney</div>
+            </TextLoop>
+          </motion.h3>
+          <div className={styles.buttongroup}>
+            <motion.button initial={{y:150, opacity:0}} animate={{y:0, transition:{delay:0.5, duration:0.1, stiffness:100, type:'spring'}, opacity:1}} className={styles.homebutton}><span className={styles.buttonicons}><FiArrowDown size={20} style={{margin:'0px 5px' }} /></span>Portfolio</motion.button>
+            <motion.button initial={{y:150, opacity:0}} animate={{y:0, transition:{delay:0.8, duration:0.05, stiffness:100, type:'spring'}, opacity:1}} className={styles.homebutton}><span className={styles.buttonicons}><FiDownload size={20} style={{margin:'0px 5px'}}/></span>Resume</motion.button>
+            
+          </div>
+          </div>
         </div>
-      </main>
+        <div className={styles.landingright}>
+          <div className={styles.wrapper}>
+            <motion.h1>
+              Recent Posts
+            </motion.h1>
+            <motion.h3>
+              This Section is Under-Construction
+            </motion.h3>
+            <motion.button initial={{y:150, opacity:0}} animate={{y:0, transition:{delay:0.5, duration:0.1, stiffness:100, type:'spring'}, opacity:1}}><span className={styles.buttonicons}><FiArrowRight size={20} style={{margin:'0px 5px' }} /></span>View All</motion.button>
+          </div>
+        </div>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      </div>
     </div>
   )
 }
